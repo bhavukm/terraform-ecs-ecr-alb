@@ -10,6 +10,7 @@ terraform-ecs-ecr-alb
 **Real-world problem**
 **Problem summary:**
 You need to run a containerized web application in production without managing EC2 hosts, with secure secrets, automated image delivery, and public access behind a load balancer.
+
 **Challenges:** building and storing container images, providing tasks secure access to secrets, ensuring tasks can pull images and report logs, exposing the app reliably to users, and deploying repeatably across environments.
 
 **Solution summary**
