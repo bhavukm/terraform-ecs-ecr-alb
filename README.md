@@ -1,7 +1,7 @@
 # terraform-ecs-ecr-alb
 terraform-ecs-ecr-alb
 
-# Terraform Project 4 — Automated ECR image delivery + Secrets-backed ECS Fargate + ALB routing and CloudWatch observability
+# Terraform Project 4: End-To-End Terraform Automation for Container Application Deployment with Automated ECR image delivery + Secrets-backed ECS Fargate Tasks + ALB routing and CloudWatch observability
 
 **Architectural Diagram:**
 
