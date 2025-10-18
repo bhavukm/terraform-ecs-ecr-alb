@@ -5,10 +5,12 @@ terraform-ecs-ecr-alb
 
 **Architectural Diagram:**
 
-<img width="750" height="572" alt="AWS ECS TF-Copy of Page-1 drawio" src="https://github.com/user-attachments/assets/a6ea9fd5-b94b-4c3e-ab5b-563994100e47" />
+<img width="750" height="572" alt="AWS ECS TF-Copy of Page-1 drawio" src="https://github.com/user-attachments/assets/e94e673b-5517-463d-a036-1777ea348e9f" />
 
 **Real-world problem**
+
 **Problem summary:**
+
 You need to run a containerized web application in production without managing EC2 hosts, with secure secrets, automated image delivery, and public access behind a load balancer.
 
 **Challenges:** building and storing container images, providing tasks secure access to secrets, ensuring tasks can pull images and report logs, exposing the app reliably to users, and deploying repeatably across environments.
