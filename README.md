@@ -1,7 +1,7 @@
 # terraform-ecs-ecr-alb
 terraform-ecs-ecr-alb
 
-# Project 4 — ECR + ECS Fargate service behind ALB
+# Project 4 — Automated ECR image delivery + Secrets-backed ECS Fargate + ALB routing and CloudWatch observability
 
 **Architectural Diagram:**
 
