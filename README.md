@@ -26,20 +26,18 @@ You need to run a containerized web application in production without managing E
 
 **Step-By-Step Implementation:**
 
-Install Terraform: https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
+**Install Terraform:** https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
 
-Install AWS CLI: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+**Install AWS CLI:** https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 
-Configure AWS CLI: https://youtu.be/TF9oisb1QJQ
+**Configure AWS CLI:** https://youtu.be/TF9oisb1QJQ
 
-Create an S3 Bucket: aws s3api create-bucket --bucket tf-state- --region us-east-1 # Optional, only required if you want Terraform state file to be stored on an S3 bucket
+**Create an S3 Bucket:** _aws s3api create-bucket --bucket tf-state- --region us-east-1_ # Optional, only required if you want Terraform state file to be stored on an S3 bucket
 
-Create a SSH key-pair: aws ec2 create-key-pair --key-name train2 --key-type rsa --key-format pem
+**Optional, only required if you want Terraform state file locking enabled**
+**Create DynamoDB table for state locking:** _aws dynamodb create-table --table-name tf-locks --attribute-definitions AttributeName=LockID,AttributeType=S --key-schema AttributeName=LockID,KeyType=HASH --provisioned-throughput ReadCapacityUnits=1,WriteCapacityUnits=1 --region us-east-1_
 
-Optional, only required if you want terraform state file locking enabled
-Create DynamoDB table for state locking: aws dynamodb create-table --table-name tf-locks --attribute-definitions AttributeName=LockID,AttributeType=S --key-schema AttributeName=LockID,KeyType=HASH --provisioned-throughput ReadCapacityUnits=1,WriteCapacityUnits=1 --region us-east-1
-
-Explanation of the different command flags:
+**Explanation of the different command flags:**
 
 --table-name tf-locks → Name of the DynamoDB table
 
