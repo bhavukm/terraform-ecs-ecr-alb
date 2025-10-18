@@ -49,5 +49,49 @@ You need to run a containerized web application in production without managing E
 
 --region → Region where the table will be created
 
+**Install git:** https://git-scm.com/downloads
+
+**Clone the repo:** git clone https://github.com/bhavukm/terraform-ecs-ecr-alb.git
+
+cd terraform-ecs-ecr-alb
+
+**Note: Replace all placeholders in the Terraform script files.**
+
+terraform init
+
+terraform plan -var-file=dev.tfvars
+
+terraform apply -var-file=dev.tfvars -auto-approve
+
+**From the output, copy the ALB DNS Endpoint:**
+
+alb_dns_name = "alb-dev-ACCOUNT-ID.us-east-1.elb.amazonaws.com"
+
+Navigate to the browser and verify that the application is running:
+
+**Note:** Please wait for a few minutes as ECS Task can take a few minutes to reach **Running** Status. Verify that from AWS ECS Dashboard.
+
+<img width="1901" height="1015" alt="image" src="https://github.com/user-attachments/assets/99e32eb6-5096-48e1-b0e0-eb965f505e32" />
+
+On the AWS Management Console: Please verify that all the resources have been created:
+
+1. AWS ECR Repository and container images with proper tags.
+
+2.  CloudWatch Log Group for ECS
+
+3.  IAM Role for ECS Task Execution and IAM policies
+
+4.  Security Group for ECS tasks
+
+5.  ECS Cluster
+
+6.  ALB + Target Group + Listener
+
+7.  ECS Task + Service (Fargate)
+
+   To destroy all the resources: terraform destroy -var-file=dev.tfvars -auto-approve
+
+
+
 
 
